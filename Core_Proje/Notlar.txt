@@ -1,0 +1,12 @@
+﻿Entity Layer ---> Skill-About-Education
+
+Data Access Layer ---> CRUD Operasyonlarına Ait Metotlar Yazılacak (Repository Design Pattern)
+
+Busines Layer ---> Validasyonların yazılacağı katman.(notEmpty,MaxCh(50) gibi)
+
+Presentation Layer ---> Görünür kısım front-end - Controller
+
+-------------------------------------------------------------------------
+
+Concrete ---> Classlar
+Abstract ---> Interfaceler
