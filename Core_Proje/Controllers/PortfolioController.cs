@@ -26,8 +26,8 @@ namespace Core_Proje.Controllers
         public IActionResult AddPortfolio(Portfolio p)
         {
             PortfolioValidator validator = new PortfolioValidator();
-
             ValidationResult result = validator.Validate(p);
+
             if (result.IsValid)
             {
                 mng.TAdd(p);
@@ -38,6 +38,13 @@ namespace Core_Proje.Controllers
                 foreach (var item in result.Errors)
                 {
                         ModelState.AddModelError(item.PropertyName,item.ErrorMessage);
+                }
+                foreach (var modelStateEntry in ModelState.Values)
+                {
+                    foreach (var error in modelStateEntry.Errors)
+                    {
+                        Console.WriteLine(error.ErrorMessage);
+                    }
                 }
             }
 

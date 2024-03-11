@@ -11,16 +11,16 @@
         <br />
         <br />
         @Html.Label("Proje Başlığı")
-        <input type="text" name="Name" class="form-control" />
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
         @Html.ValidationMessageFor(x=>x.Name)
         <br />
-        <label>Proje Görseli URL'si</label>
-        <input type="text" name="ImageUrl" class="form-control" />
+        @Html.Label("Proje Görseli URL'si")
+        @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.ImageUrl)
         <br />
         <button class="btn btn-primary">Kaydet</button>
     </form>
 </div>
 
-
-@* , new{@class="text-danger"} *@
+                                 
+@* , new{@class="text-danger"} *@      
