@@ -29,7 +29,7 @@ namespace BusinessLayer.Concrete
 
         public void TUpdate(Experience t)
         {
-            _experienceDal.Delete(t);
+            _experienceDal.Update(t);
         }
 
         public List<Experience> TGetList()
