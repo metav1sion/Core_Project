@@ -1,24 +1,27 @@
 ﻿@model EntityLayer.Concrete.Skill
 @{
     ViewData["Title"] = "UpdateSkill";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
-<div class="card-header border-0">
-    <h3 class="mb-0">Yetenek Listesi Tablosu</h3>
-
-    <form class="form-group" method="post">
-        <br />
-        <br />
-        <label>Yetenek ID</label>
-        @Html.TextBoxFor(x=>x.SkillID, new {@class="form-control", @readonly="readonly"})
-        <br />
-        <label>Yetenek Adı</label>
-        @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
-        <br />
-        <label>Yetenek Değeri</label>
-        @Html.TextBoxFor(x => x.Value, new { @class = "form-control" })
-        <br />
-        <button class="btn btn-primary">Güncelle</button>
-    </form>
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Deneyim Güncelleme Sayfası</h4>
+            <form class="form-group" method="post">
+                <br />
+                <br />
+                <label>Yetenek ID</label>
+                @Html.TextBoxFor(x=>x.SkillID, new {@class="form-control", @readonly="readonly"})
+                <br />
+                <label>Yetenek Adı</label>
+                @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+                <br />
+                <label>Yetenek Değeri</label>
+                @Html.TextBoxFor(x => x.Value, new { @class = "form-control" })
+                <br />
+                <button class="btn btn-primary">Güncelle</button>
+            </form>
+        </div>
+    </div>
 </div>

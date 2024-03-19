@@ -1,21 +1,23 @@
 ﻿@{
     ViewData["Title"] = "AddSkill";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
-<div class="card-header border-0">
-    <h3 class="mb-0">Yetenek Listesi Tablosu</h3>
-    
-    <form class="form" method="post">
-        <br />
-        <br />
-        @Html.Label("Yetenek Başlığı")
-        <input type="text" name="Title" class="form-control" />
-        <br />
-        <label>Değer</label>
-        <input type="text" name="Value" class="form-control" />
-        <br />
-        <button  class="btn btn-primary">Kaydet</button>
-    </form>
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Deneyim Ekleme Sayfası</h4>
+            <form class="form" method="post">
+                <br />
+                <br />
+                @Html.Label("Yetenek Başlığı")
+                <input type="text" name="Title" class="form-control" />
+                <br />
+                <label>Değer</label>
+                <input type="text" name="Value" class="form-control" />
+                <br />
+                <button  class="btn btn-primary">Kaydet</button>
+            </form>
+        </div>
+    </div>
 </div>
-
-
