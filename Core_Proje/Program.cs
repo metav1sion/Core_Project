@@ -1,7 +1,24 @@
+using DataAccesLayer.Concrete;
+using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authentication.Cookies;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDbContext<Context>();
+builder.Services.AddIdentity<WriterUser, WriterRole>().AddEntityFrameworkStores<Context>();
 builder.Services.AddControllersWithViews();
+//builder.Services.AddAuthentication(options =>
+//    {
+//        options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+//        options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+//        options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+//    })
+//    .AddCookie(options =>
+//    {
+//        options.LoginPath = "/Login/Index/";
+//    });
+
 
 var app = builder.Build();
 
@@ -17,7 +34,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

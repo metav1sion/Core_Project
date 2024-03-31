@@ -4,19 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace DataAccesLayer.Concrete
 {
-	public class Context : DbContext
+	public class Context : IdentityDbContext<WriterUser,WriterRole,int>
 	{
-		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-		{
-			optionsBuilder.UseSqlServer(
-				"server=DESKTOP-JTNUQFE\\SQLEXPRESS;Database=CoreProjeDB;integrated security=true;");
-		}
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(
+                "server=DESKTOP-JTNUQFE\\SQLEXPRESS;Database=CoreProjeDB;integrated security=true;");
+        }
 
-		public DbSet<About> Abouts { get; set; }
+        public DbSet<About> Abouts { get; set; }
 		public DbSet<Contact> Contacts { get; set; }
 		public DbSet<Experience> Experiences { get; set; }
 		public DbSet<Feature> Features { get; set; }
@@ -29,5 +30,6 @@ namespace DataAccesLayer.Concrete
 		public DbSet<User> Users { get; set; }
 		public DbSet<UserMessage> UserMessages { get; set; }
 		public DbSet<ToDoList> ToDoLists { get; set; }
+		public DbSet<test1> Test1s { get; set; }
 	}
 }
